@@ -1,7 +1,7 @@
 <phpunit>
 	<testsuites>
 		<testsuite name="default">
-			<file>./tests/mainTest.php</file>
+			<file>./tests/php/csv2jsonTest.php</file>
 		</testsuite>
 	</testsuites>
 </phpunit>

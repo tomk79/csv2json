@@ -21,13 +21,24 @@ composer.json の require 項目に、`tomk79/csv2json` を追加します。
 
 ## 使い方 - Usage
 
-```
+```php
 $csv2json = new \tomk79\csv2json( 'path/to/data.csv' );
 var_dump( $csv2json->fetch_assoc() ); // 連想配列で受け取る
 var_dump( $csv2json->to_json() ); // JSON形式の文字列で受け取る
 ```
 
 CSVファイルの最初の行(0行目)が定義行として使用されます。
+
+
+## 更新履歴 - Change log
+
+### csv2json v1.0.1 (リリース日未定)
+
+- 内部コードの細かい修正。
+
+### csv2json v1.0.1 (2015年1月28日)
+
+- Initial Release.
 
 
 ## ライセンス - License
@@ -38,15 +49,15 @@ MIT License
 ## 作者 - Author
 
 - (C)Tomoya Koyanagi <tomk79@gmail.com>
-- website: <http://www.pxt.jp/>
-- Twitter: @tomk79 <http://twitter.com/tomk79/>
+- website: <https://www.pxt.jp/>
+- Twitter: @tomk79 <https://twitter.com/tomk79/>
 
 
 ## for Developer
 
 ### Test
 
-```
-$ ./vendor/phpunit/phpunit/phpunit tests/php/csv2jsonTest.php csv2json
+```bash
+$ ./vendor/phpunit/phpunit/phpunit
 ```
 

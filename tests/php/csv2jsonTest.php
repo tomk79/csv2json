@@ -6,10 +6,10 @@
  * $ ./vendor/phpunit/phpunit/phpunit tests/php/csv2jsonTest.php csv2json
  */
 
-class csv2jsonTest extends PHPUnit_Framework_TestCase{
+class csv2jsonTest extends PHPUnit\Framework\TestCase{
 	private $fs;
 
-	public function setup(){
+	public function setUp() : void{
 		mb_internal_encoding('UTF-8');
 	}
 
@@ -24,8 +24,8 @@ class csv2jsonTest extends PHPUnit_Framework_TestCase{
 		$this->assertTrue( is_array( $assoc ) );
 		$this->assertEquals( $assoc[0]['a'], '1' );
 		$this->assertEquals( $assoc[9]['g'], 'g10' );
-		$this->assertNull( $assoc[10]['g'] );
-		$this->assertNull( $assoc[0]['empty'] );
+		$this->assertNull( $assoc[10]['g'] ?? null );
+		$this->assertNull( $assoc[0]['empty'] ?? null );
 
 		$json_string = $csv2json->to_json();
 		$this->assertTrue( is_string( $json_string ) );
@@ -34,8 +34,8 @@ class csv2jsonTest extends PHPUnit_Framework_TestCase{
 		// var_dump($decoded_json);
 		$this->assertEquals( $decoded_json[0]->a, '1' );
 		$this->assertEquals( $decoded_json[9]->g, 'g10' );
-		$this->assertNull( $decoded_json[10]->g );
-		$this->assertNull( $decoded_json[0]->empty );
+		$this->assertNull( $decoded_json[10]->g ?? null );
+		$this->assertNull( $decoded_json[0]->empty ?? null );
 
 	}
 
