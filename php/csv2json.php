@@ -7,7 +7,8 @@ namespace tomk79;
 /**
  * class csv2json
  */
-class csv2json{
+class csv2json {
+	private $fs;
 	private $path_csv;
 	private $key_index;
 	private $rows;
